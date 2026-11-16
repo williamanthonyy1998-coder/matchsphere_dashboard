@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Activity, ArrowRight, Bell, Building2, CheckCircle2, ChevronDown, CircleDollarSign, Compass, Handshake, Home, LayoutDashboard, ListPlus, LogOut, Plus, Search, Settings, ShieldCheck, Sparkles, Users, Wallet, X } from "lucide-react";
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:4000/api/v1";
+const API = import.meta.env.VITE_API_URL || "http://localhost:5000/api/v1";
 async function request(path, { token, ...options } = {}) {
   const response = await fetch(`${API}${path}`, { ...options, headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}), ...(options.headers || {}) } });
   const body = await response.json().catch(() => ({}));
